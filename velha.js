@@ -67,6 +67,29 @@ function checaVencedor() {
         mudarVencedor(quadrado1);
         return;
     }
+
+    if(checaSequencia(quadrado2, quadrado5, quadrado8)){
+        corAsserto(quadrado2, quadrado5, quadrado8);
+        mudarVencedor(quadrado2);
+        return;
+    }
+
+    if(checaSequencia(quadrado3, quadrado6, quadrado9)){
+        corAsserto(quadrado3, quadrado6, quadrado9);
+        mudarVencedor(quadrado3);
+        return;
+    }
+
+    if(checaSequencia(quadrado1, quadrado5, quadrado9)){
+        corAsserto(quadrado1, quadrado5, quadrado9);
+        mudarVencedor(quadrado1);
+        return;
+    }
+
+    if(checaSequencia(quadrado3, quadrado5, quadrado7)){
+        corAsserto(quadrado3, quadrado5, quadrado7);
+        mudarVencedor(quadrado3);
+    }
 }
 
 function mudarVencedor(quadrado) {
@@ -90,4 +113,17 @@ function checaSequencia(quadrado1, quadrado2, quadrado3) {
         eigual = true;
     }
     return eigual;
+}
+
+function reiniciar(){
+    vencedor = null;
+    vencedorSelecionado.innerHTML = '';
+
+    for(var i = 1; 1<= 9; i++){
+        //CÓDIGO
+        var quadrado = document.getElementById(i);
+        quadrado.style.background = '#eee';
+        quadrado.style.color = '#eee';
+        quadrado.innerHTML = '-';
+    }
 }
