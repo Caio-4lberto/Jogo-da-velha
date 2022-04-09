@@ -1,14 +1,15 @@
 var jogador, vencedor = null;
 var jogadorSelecionado = document.getElementById('jogador-selecionado');
 var vencedorSelecionado = document.getElementById('vencedor-selecionado');
-var quadrados = document.getElementsByClassName('quadrado')
-
 
 mudarJogador('X')
 
 function escolherQuadrado (id){
-    var quadrado = document.getElementById(id);
+    if (vencedor !== null){
+        return;
+    }
 
+    var quadrado = document.getElementById(id);
     if(quadrado.innerHTML !== '-'){
         return;
     }
@@ -126,4 +127,6 @@ function reiniciar(){
         quadrado.style.color = '#eee';
         quadrado.innerHTML = '-';
     }
+
+    mudarJogador('X');
 }
