@@ -120,7 +120,7 @@ function reiniciar(){
     vencedor = null;
     vencedorSelecionado.innerHTML = '';
 
-    for(var i = 1; 1<= 9; i++){
+    for(var i = 1; i <= 9; i++){
         //CÓDIGO
         var quadrado = document.getElementById(i);
         quadrado.style.background = '#eee';
@@ -130,3 +130,4 @@ function reiniciar(){
 
     mudarJogador('X');
 }
+
