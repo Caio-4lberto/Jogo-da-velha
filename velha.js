@@ -1,5 +1,5 @@
 var jogador, vencedor = null;
-var jogadorSelecionado = document.getElementById('jogador-selecionado');
+var jogadorSelecionado = document.getElementById('jogador-selecionado');      //document.getElementById SERVE PARA PEGAR O VALOR ATRAVÉS DO id
 var vencedorSelecionado = document.getElementById('vencedor-selecionado');
 
 mudarJogador('X')
@@ -10,12 +10,12 @@ function escolherQuadrado (id){
     }
 
     var quadrado = document.getElementById(id);
-    if(quadrado.innerHTML !== '-'){
-        return;
+    if(quadrado.innerHTML !== '-'){              
+        return;                      //O return FAZ COM QUE O RESTOM DA FUNÇÃO NÃO SEJA EXECUTADA              
     }
 
-    quadrado.innerHTML = jogador;
-    quadrado.style.color = '#000'
+    quadrado.innerHTML = jogador;   // innerHTML É UTILIZADO PARA ALTERAR O VALOR DO ELEMENTO
+    quadrado.style.color = '#000'   //style.color MUDA A COR DO QUADRADO
 
     if (jogador === 'X') {
         jogador = 'O';
@@ -29,9 +29,9 @@ function escolherQuadrado (id){
 
 
 
-function mudarJogador(valor){
-    jogador = valor;
-    jogadorSelecionado.innerHTML = jogador;
+function mudarJogador(valor){                 //O VALOR INICIAL É PASSADO LÁ EM CIMA COMO 'X'
+    jogador = valor;                          //jogador PASSA A VALER X
+    jogadorSelecionado.innerHTML = jogador;   //ALTERA A LABEL ID DENOMINADA jogadorSelecionado
 }
 
 function checaVencedor() {
